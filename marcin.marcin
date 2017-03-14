@@ -3,9 +3,13 @@ maRcin b maRCin 0
 marcin a
 marcin b
 marcIn Marcin a marCIN b marciN
-	MARCIN  a marCINmarCIN MarciN is lower MarciN
+	MARCIN  a marCINmarCIN MarciN  is lower MarciN
 marcIn Marcin a MARcin b marciN
-	MARCIN b marCINmarCIN MarciN is lower MarciN
+	MARCIN b marCINmarCIN MarciN  is lower MarciN
 marcIn Marcin a maRCin maRCin b marciN
-	MARCIN Marcin MarciNeqMarciN marciN
-MARCIN Marcin MarciN\nMarciN marciN
+	MARCIN Marcin MarciN eq MarciN marciN
+MARCIN MarciN \n MarciN
+marCin end
+MARCIN MarciN not showed MarciN
+marCiN end
+MARCIN MarciN marcin\n MarciN

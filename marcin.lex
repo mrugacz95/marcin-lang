@@ -5,8 +5,8 @@
 %}
 %s semicolon
 %s quote
+%s label
 %%
-<quote>\ 					printf(" ");
 \ 							;
 mARcin						printf("[]");
 Marcin						printf("(");
@@ -16,16 +16,18 @@ MarcIN						printf("}");
 MARcin						printf(">");
 marCIN						printf("<");
 marCINmarCIN				printf("<<");
-<quote>MarciN				{ printf("\""); BEGIN INITIAL; }
-<INITIAL>MarciN/.+MarciN			{ printf("\""); BEGIN quote; }
-<quote>.+/MarciN			ECHO;
+<quote>\ MarciN				{ printf("\""); BEGIN INITIAL; }
+<INITIAL>MarciN\ /.+MarciN	{ printf("\""); BEGIN quote; }
+<quote>.+/\ MarciN			ECHO;
 marcIN\ 					printf("int ");
 maRcin\ 					printf("float ");
 marcIn						{ printf("if"); BEGIN semicolon; }
 maRCin						printf("=");
-marCin						printf("goto");
+marCin\ 					printf("goto ");
 maRCin\ maRCin				printf("==");
 marcin 						printf("cin >> ");
+marCiN\ 					BEGIN label;
+<label>.+/\n				{ printf("%s:",yytext); BEGIN INITIAL; }
 <INITIAL>\n					printf(";\n");
 \t 							{ printf("\t"); BEGIN INITIAL; }
 MARCIN  					printf("cout<<"); 
